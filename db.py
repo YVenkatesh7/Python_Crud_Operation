@@ -1,8 +1,10 @@
 import sqlite3
 
 conn = sqlite3.connect('database.db')
+cur  = conn.cursor()
 print("Opened database successfully")
 
 conn.execute('CREATE TABLE students (name TEXT, addr TEXT, city TEXT, pin TEXT)')
 print("Table created successfully")
+cur.close()
 conn.close()
